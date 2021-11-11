@@ -1,0 +1,49 @@
+describe articles;
++--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+| Field        | Type         | Null | Key | Default           | Extra                                         |
++--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+| artID        | int          | NO   | PRI | NULL              | auto_increment                                |
+| authorID     | int          | NO   | MUL | NULL              |                                               |
+| catID        | int          | NO   | MUL | NULL              |                                               |
+| title        | varchar(255) | YES  |     | NULL              |                                               |
+| image        | varchar(255) | YES  |     | NULL              |                                               |
+| content      | text         | YES  |     | NULL              |                                               |
+| lastModified | datetime     | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
++--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
+mysql> describe comments;
++--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+| Field        | Type         | Null | Key | Default           | Extra                                         |
++--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+| comID        | int          | NO   | PRI | NULL              | auto_increment                                |
+| authorID     | int          | NO   | MUL | NULL              |                                               |
+| artID        | int          | NO   | MUL | NULL              |                                               |
+| content      | varchar(255) | YES  |     | NULL              |                                               |
+| lastModified | datetime     | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
++--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
+mysql> describe users;
++--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+| Field        | Type         | Null | Key | Default           | Extra                                         |
++--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+| userID       | int          | NO   | PRI | NULL              | auto_increment                                |
+| username     | varchar(30)  | NO   | MUL | NULL              |                                               |
+| lastname     | varchar(50)  | YES  |     | NULL              |                                               |
+| firstname    | varchar(30)  | YES  |     | NULL              |                                               |
+| password     | varchar(30)  | YES  |     | NULL              |                                               |
+| email        | varchar(255) | YES  |     | NULL              |                                               |
+| role         | varchar(30)  | YES  |     | NULL              |                                               |
+| lastModified | datetime     | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
++--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
+mysql> describe topics;
++--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+| Field        | Type         | Null | Key | Default           | Extra                                         |
++--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+| topID        | int          | NO   | PRI | NULL              | auto_increment                                |
+| name         | varchar(50)  | YES  |     | NULL              |                                               |
+| description  | varchar(255) | YES  |     | NULL              |                                               |
+| lastModified | datetime     | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
++--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
+the connection line is:   $mysqli = new mysqli("127.0.0.1", "bloguser", "blogAssign3", "blogdb");
